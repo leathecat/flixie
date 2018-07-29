@@ -40,7 +40,7 @@ class App extends Component {
     let response = await fetch(url);
     let data = await response.json();
 
-    await timeout(200);
+    await timeout(4000);
     this.setState({
       movies: data.results,
       isLoading: false
