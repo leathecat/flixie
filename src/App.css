@@ -71,4 +71,5 @@ h4 {
 .trailer-btn {
   position: absolute !important;
   bottom: 40px !important;
+  left: 250px;
 }

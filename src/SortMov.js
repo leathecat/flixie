@@ -32,7 +32,7 @@ export default class SortMov extends Component {
       <div>
         <Dropdown className="dropdown" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
           <DropdownToggle outline color="secondary" size="sm">
-            Sort Movie by{" "}
+            SORT MOVIE
           </DropdownToggle>
           <DropdownMenu right>
             <DropdownItem onClick={() => this.props.sortByRating()}>
@@ -48,7 +48,8 @@ export default class SortMov extends Component {
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
-        <Button className="btn-refresh" size="sm" onClick={() => window.location.reload()}>Refresh</Button>
+
+        <Button className="btn-refresh" size="sm" onClick={() => window.location.reload()}><i className="fas fa-sync"></i></Button>
       </div>
     );
   }

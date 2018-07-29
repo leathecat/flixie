@@ -42,13 +42,13 @@ const Movie = ({
           />
         </Media>
         <Media body>
-          <Media heading className="movie-content">
+          <Media heading>
             {title}
           </Media>
-          <Media className="card-title">
+          <Media className>
             {release_date} &nbsp;&nbsp;
             <div>
-              <strong>
+              <strong >
                 <i className="fas fa-star" aria-hidden="true" />{vote_average}
               </strong>
               <strong>
@@ -57,7 +57,7 @@ const Movie = ({
               </strong>
             </div>
           </Media>
-          <Media>{overview.substring(200, 0) + "... See more."} </Media>
+          <Media>{overview.substring(180, 0) + "... See more."} </Media>
           <div >
             <Button outline color="danger" className="trailer-btn" >
               Watch Trailer
@@ -65,7 +65,7 @@ const Movie = ({
           </div>
         </Media>
       </Media>
-    </Col>
+    </Col >
 
   );
 };
