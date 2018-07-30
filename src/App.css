@@ -73,3 +73,7 @@ h4 {
   bottom: 40px !important;
   left: 250px;
 }
+
+.modal-body {
+  min-width: 800px;
+}

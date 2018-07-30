@@ -1,14 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
+const api_key = "13832345b924b204e79d85b719bc624f";
 
-class WatchTrailer extends React.Component {
+export default class WatchTrailer extends React.Component {
+
+
     constructor(props) {
         super(props);
         this.state = {
             modal: false
         };
-
+        console.log(this)
         this.toggle = this.toggle.bind(this);
     }
 
@@ -21,15 +24,17 @@ class WatchTrailer extends React.Component {
     render() {
         return (
             <div>
-                <Button outline color="danger" className="trailer-btn" onClick={this.toggle}>{this.props.buttonLabel}</Button>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Trailer</ModalHeader>
-                    <ModalBody>
-                        <iframe class="youtube-player" type="text/html" src="http://www.youtube.com/watch_popup?v=Lv-sY_z8MNs" allowfullscreen frameborder="0"></iframe>
-                    </ModalBody>
-
+                <Button outline color="danger" className="trailer-btn" onClick={this.toggle}>{this.props.buttonLabel} Watch Trailer</Button>
+                <Modal className="modal-body" isOpen={this.state.modal} toggle={this.toggle}>
+                    <div className="embed-responsive embed-responsive-16by9">
+                        <iframe className="youtube-player" allow="autoplay; encrypted-media" type="text/html" src="http://www.youtube.com/watch_popup?v=2LqzF5WauAw"></iframe>
+                    </div>
                 </Modal>
             </div>
+
         );
     }
 }
+
+// API link (with id and api_key) --> results --> id --> key
+//http://api.themoviedb.org/3/movie/157336/videos?api_key=###

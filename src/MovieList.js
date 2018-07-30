@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import {
-  Modal, ModalHeader, ModalBody, ModalFooter,
-  Button,
   Col,
   Row,
   Media
 } from "reactstrap";
 import "./App.css";
+import WatchTrailer from "./WatchTrailer";
 
 export default class MovieList extends Component {
   render() {
+
     return (
       <Row>
         {this.props.movies.map((movie, index) => (
@@ -21,7 +21,6 @@ export default class MovieList extends Component {
 }
 
 const Movie = ({
-  id,
   title,
   overview,
   poster_path,
@@ -29,10 +28,10 @@ const Movie = ({
   vote_average,
   popularity
 }) => {
+
   return (
 
     <Col lg="6">
-
       <Media className="movie-card">
         <Media left href="#">
           <Media
@@ -45,7 +44,7 @@ const Movie = ({
           <Media heading>
             {title}
           </Media>
-          <Media className>
+          <Media>
             {release_date} &nbsp;&nbsp;
             <div>
               <strong >
@@ -57,17 +56,15 @@ const Movie = ({
               </strong>
             </div>
           </Media>
-          <Media>{overview.substring(180, 0) + "... See more."} </Media>
-          <div >
-            <Button outline color="danger" className="trailer-btn" >
-              Watch Trailer
-            </Button>
+          <Media>{overview.substring(180, 0) + "..."} </Media>
+          <div>
+            <WatchTrailer />
           </div>
         </Media>
       </Media>
-    </Col >
+    </Col>
 
-  );
+  )
 };
 
 

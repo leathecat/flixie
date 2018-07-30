@@ -40,7 +40,7 @@ class App extends Component {
     let response = await fetch(url);
     let data = await response.json();
 
-    await timeout(3000);
+    await timeout(200);
     this.setState({
       movies: data.results,
       isLoading: false
@@ -50,7 +50,7 @@ class App extends Component {
   async handleInputChange(inputText) {
     if (inputText.length > 0) {
       try {
-        let url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&page=1&include_adult=false&query=${inputText}`;
+        let url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&include_adult=false&query=${inputText}`;
         let response = await fetch(url);
         let data = await response.json();
         this.setState({
@@ -100,7 +100,6 @@ class App extends Component {
             src={logo}
             className="App-logo"
             alt="logo"
-
           />
         </header>
         <Container>
